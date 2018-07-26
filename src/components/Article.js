@@ -1,6 +1,16 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
+import CommentList from './CommentList'
 
 export default class Article extends Component{
+
+    static propTypes = {
+        article: PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired,
+            text: PropTypes.string.isRequired
+        }).isRequired
+    }
 
     constructor(props) {
         super(props)
@@ -38,7 +48,12 @@ export default class Article extends Component{
 
         const {article} = this.props
 
-        return <section>{article.text}</section>
+        return (
+            <section>
+                <div>{article.text}</div>
+                <CommentList comments = {article.comments}/>
+                </section>
+        )
     }
 }
 
