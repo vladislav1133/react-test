@@ -13,12 +13,16 @@ class Article extends Component{
         }).isRequired
     }
 
+    componentWillMount() {
+        console.log("---", 'will mount')
+    }
+
     render() {
 
         const {article, isOpen, toggleOpen} = this.props
 
         return (
-            <div>
+            <div ref = {this.setContainerRef}>
                 <h3>{article.title}</h3>
                 <button onClick = {toggleOpen}>
                     { isOpen ? 'close' : 'open' }
@@ -27,6 +31,14 @@ class Article extends Component{
 
             </div>
         )
+    }
+
+    setContainerRef() {
+        //get tag property from real dom
+    }
+
+    componentDidMount() {
+        console.log("---", 'did mount')
     }
 
     getBody() {
