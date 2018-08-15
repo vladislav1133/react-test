@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import CommentList from './CommentList'
-import toggleOpen from '../decorators/toggleOpen'
 
 class Article extends Component{
 
@@ -10,7 +9,9 @@ class Article extends Component{
             id: PropTypes.string.isRequired,
             title: PropTypes.string.isRequired,
             text: PropTypes.string.isRequired
-        }).isRequired
+        }).isRequired,
+        isOpen: PropTypes.bool,
+        toggleOpen: PropTypes.func
     }
 
     componentWillMount() {

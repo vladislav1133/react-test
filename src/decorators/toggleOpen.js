@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-export default (OriginalComponent) => class WrappedComponent extends Component {
+export default OriginalComponent => class WrappedToggleOpenComponent extends Component {
 
     state = {
         isOpen: false
