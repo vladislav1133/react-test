@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 import PropTypes from'prop-types'
 import ArticleList from './ArticleList'
+import UserForm from './UserForm'
 
 class App extends Component {
     static propTypes = {
 
+    }
+
+    state = {
+        username: ''
     }
 
     render() {
@@ -14,6 +19,8 @@ class App extends Component {
             </div>
         )
     }
+
+
 }
 
 export default App
