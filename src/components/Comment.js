@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
- function Comment(props) {
+function Comment(props) {
 
     const {comment} = props
 

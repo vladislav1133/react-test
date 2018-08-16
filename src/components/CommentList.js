@@ -9,7 +9,7 @@ class CommentList extends Component{
         comments: PropTypes.array,
         //from toggleOpen decorator
         isOpen: PropTypes.bool,
-        toggleOpen: PropTypes.func
+        toggleOpen: PropTypes.func.isRequired
     }
 
     static defaultProps = {

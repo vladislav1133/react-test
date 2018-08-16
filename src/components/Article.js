@@ -14,14 +14,17 @@ class Article extends Component{
         toggleOpen: PropTypes.func
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        return nextProps.isOpen !== this.props.isOpen
+    }
+
     componentWillMount() {
-        console.log("---", 'will mount')
+       // console.log("---", 'will mount')
     }
 
     render() {
-
         const {article, isOpen, toggleOpen} = this.props
-
+        console.log("---", 'update render article')
         return (
             <div ref = {this.setContainerRef}>
                 <h3>{article.title}</h3>

@@ -12,17 +12,23 @@ class ArticleList extends Component {
         toggleOpenItem: PropTypes.func.isRequired
     }
 
-    render() {
-        const {toggleOpenItem, openItemId} = this.props
+    static defaultProps = {
+        toggleOpenItem: () => null
+    }
 
-        const articleElements =  this.props.articles.map(article =>
+    render() {
+        console.log("---", 'render article list')
+        const {toggleOpenItem, openItemId, articles} = this.props
+
+        const articleElements =  articles.map(article =>
             <li key = {article.id}>
                 <Article
                     article = {article}
                     isOpen = {article.id === openItemId}
-                    toggleOpen = {toggleOpenItem( article.id)}
+                    toggleOpen = {toggleOpenItem(article.id)}
                 />
             </li>)
+
         return (
             <ul>
                 {articleElements}
@@ -30,6 +36,5 @@ class ArticleList extends Component {
         )
     }
 }
-
 
 export default accordion(ArticleList)
